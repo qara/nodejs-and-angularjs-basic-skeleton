@@ -1,4 +1,4 @@
 nodejs and angularjs basic skeleton
 ===================================
 
-nodejs and angularjs basic skeleton with nodejs modules
+connect sucket.io with angular js framework
