@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS Demos</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body  ng-controller="MainController">
+<h1>Sample Project</h1>
+Name: <input type="text" ng-model="query" placeholder="Type something" />&nbsp;&nbsp; {{ query }}
+
+<hr/>
+<div class="row clearfix" ng-view>
+    <div class="col-lg-4">
+    <table class="table table-striped">
+        <tr>
+            <th><a href="" ng-click="predicate = 'name';  reverse=!reverse">Name</a></th>
+            <th><a href="" ng-click="predicate = 'snippet'; reverse=!reverse">snippet</a></th>
+            <th><a href="" ng-click="orderBy = 'price';  reverse=!reverse">price</a></th>
+        </tr>
+
+        <tr ng-repeat="phone in phones   | filter:query  | orderBy:predicate:reverse">
+            <td>{{phone.name}}</td>
+            <td>{{phone.snippet}}</td>
+            <td>{{phone.price}}</td>
+        </tr>
+    </table>
+   </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/libs/jquery-2.1.1.min.js"></script>
+<script src="js/libs/angular.min.js"></script>
+<script src="js/libs/angular-loader.min.js"></script>
+<script src="js/libs/angular-route.min.js"></script>
+<script src="js/libs/angular-animate.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<script src="js/controllers.js"></script>
+
+</body>
+</html>
